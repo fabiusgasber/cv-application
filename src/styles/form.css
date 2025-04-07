@@ -1,0 +1,10 @@
+.hidden {
+  display: none;
+}
+
+.personal-info, .personal-info div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+}

@@ -2,7 +2,6 @@ import "./styles/App.css";
 import Form from "./components/Form";
 
 function App() {
-
   return (
     <>
       <h1>CV Generator</h1>
@@ -11,4 +10,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
