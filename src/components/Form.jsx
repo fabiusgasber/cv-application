@@ -29,8 +29,8 @@ const Form = () => {
       </div>
       <div className="cv-preview">
         <CVWrapper data={personalData} />
-        <CVWrapper data={educationData} />
-        <CVWrapper data={workData} />
+        <CVWrapper data={educationData} title="Education" />
+        <CVWrapper data={workData} title="Work Experience" />
       </div>
     </div>
   );
