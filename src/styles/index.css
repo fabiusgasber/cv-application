@@ -1,11 +1,24 @@
+* {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+@font-face {
+  font-family: "montserrat";
+  src: url(../../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: montserrat, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgb(255, 255, 255);
   background-color: #242424;
+  --theme-color: dodgerblue;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,8 +37,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -33,6 +44,19 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+ul {
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+input {
+  appearance: none;
+  border: none;
+  padding-top: 0;
 }
 
 button {
