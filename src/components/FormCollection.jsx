@@ -73,7 +73,7 @@ const FormCollection = ({visible, onClick, inputs, formData, setFormData}) => {
                 <div><label key={input.key} htmlFor={input.name}>{input.label}</label><input value={activeForm[input.name]} name={input.name} id={input.name} onChange={handleChange} type={input.type} placeholder={"Enter " + input.label}></input></div>
             )}
             <div className="form-btn">
-                <button type="button" onClick={deleteEntry}>Delete</button>
+                <button type="button" id="delete-btn" onClick={deleteEntry}>Delete</button>
                 <button type="button" onClick={() => setStatus("close")}>Cancel</button>
                 <button type="submit">Save</button>
             </div>
