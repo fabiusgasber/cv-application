@@ -21,7 +21,12 @@ const Form = () => {
     const workInputs = findInputs("work");
 
     const setVisible = (e, index) => {
-      if(visibleIndex === index) setVisibleIndex(-1);
+      if (
+        visibleIndex === index &&
+        (e.target.tagName === "DIV" || e.target.tagName === "H2")
+      ) {
+        setVisibleIndex(-1);
+      }
       else setVisibleIndex(index);
     }
 
