@@ -1,5 +1,4 @@
 import { useState } from "react";
-import CVWrapper from "./CVWrapper";
 
 const FormCollection = ({visible, onClick, inputs, formData, setFormData}) => {
 
