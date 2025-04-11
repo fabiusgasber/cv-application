@@ -1,7 +1,6 @@
 form, form div {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 form {
@@ -46,14 +45,12 @@ form {
   margin-top: auto;
 }
 
-form div {
-  align-items: center;
-}
-
 .form-btn {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: row;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 #delete-btn {
