@@ -20,12 +20,17 @@ const Form = () => {
     const educationInputs = findInputs("education");
     const workInputs = findInputs("work");
 
+    const setVisible = (e, index) => {
+      if(visibleIndex === index) setVisibleIndex(-1);
+      else setVisibleIndex(index);
+    }
+
   return (
     <div className="main-layout">
       <div className="forms">
-      <FormCollection visible={visibleIndex === 0} onClick={() => setVisibleIndex(0)} inputs={personalInputs} formData={personalData} setFormData={setPersonalData} />
-      <FormCollection visible={visibleIndex === 1} onClick={() => setVisibleIndex(1)} inputs={educationInputs} formData={educationData} setFormData={setEducationData} />
-      <FormCollection visible={visibleIndex === 2} onClick={() => setVisibleIndex(2)} inputs={workInputs} formData={workData} setFormData={setWorkData} />
+      <FormCollection visible={visibleIndex === 0} onClick={(e) => setVisible(e, 0)} inputs={personalInputs} formData={personalData} setFormData={setPersonalData} />
+      <FormCollection visible={visibleIndex === 1} onClick={(e) => setVisible(e, 1)} inputs={educationInputs} formData={educationData} setFormData={setEducationData} />
+      <FormCollection visible={visibleIndex === 2} onClick={(e) => setVisible(e, 2)} inputs={workInputs} formData={workData} setFormData={setWorkData} />
       </div>
       <div className="cv-preview">
         <CVWrapper data={personalData} />

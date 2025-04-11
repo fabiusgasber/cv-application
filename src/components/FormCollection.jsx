@@ -48,7 +48,7 @@ const FormCollection = ({visible, onClick, inputs, formData, setFormData}) => {
     }
     return (
         <div className="form-wrapper" onClick={onClick}>
-        <h2>{inputs.title}</h2>
+        <h2 className={visible ? "rotate" : ""}>{inputs.title}</h2>
         {status === "add" && visible &&
         <form onSubmit={saveForm}>
             {inputs.fields.map(input =>
