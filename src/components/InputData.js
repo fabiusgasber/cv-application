@@ -19,8 +19,7 @@ export const inputList = [
         fields: [
         { label: "School/University", name: "school", type: "text", key: crypto.randomUUID()},
         { label: "Degree", name: "degree", type: "text", key: crypto.randomUUID()},
-        { label: "Start Date", name: "start", type: "text", key: crypto.randomUUID()},
-        { label: "End Date", name: "end", type: "text", key: crypto.randomUUID()},
+        { label: "Education period", name: "period", type: "text", key: crypto.randomUUID()},
         { label: "Location", name: "location", type: "text", key: crypto.randomUUID()},
         ]
     },
@@ -33,8 +32,7 @@ export const inputList = [
         { label: "Company name", name: "company", type: "text", key: crypto.randomUUID()},
         { label: "Position Title", name: "position", type: "text", key: crypto.randomUUID()},
         { label: "Description", name: "description", type: "text", key: crypto.randomUUID()},
-        { label: "Start Date", name: "start", type: "text", key: crypto.randomUUID()},
-        { label: "End Date", name: "end", type: "text", key: crypto.randomUUID()},
+        { label: "Employment period", name: "period", type: "text", key: crypto.randomUUID()},
         { label: "Location", name: "location", type: "text", key: crypto.randomUUID()},
         ]
     }
