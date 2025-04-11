@@ -3,6 +3,7 @@ import "../styles/form.css";
 import { inputList } from "./InputData";
 import FormCollection from "./FormCollection";
 import CVWrapper from "./CVWrapper";
+import { defaultData } from "./defaultData";
 
 const Form = () => {
 
@@ -11,10 +12,9 @@ const Form = () => {
   }
 
     const [visibleIndex, setVisibleIndex] = useState(-1);
-    const [personalData, setPersonalData] = useState([]);
-    const [educationData, setEducationData] = useState([]);
-    const [workData, setWorkData] = useState([]);
-
+    const [personalData, setPersonalData] = useState(defaultData.defaultPersonalData);
+    const [educationData, setEducationData] = useState(defaultData.defaultEducationData);
+    const [workData, setWorkData] = useState(defaultData.defaultWorkData);
 
     const personalInputs = findInputs("personal");
     const educationInputs = findInputs("education");
