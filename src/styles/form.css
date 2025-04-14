@@ -1,3 +1,9 @@
+.forms {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 250px;
+}
+
 form, form div {
   display: flex;
   flex-direction: column;
@@ -9,6 +15,7 @@ form {
 
 .btn-container {
   display: flex;
+  justify-content: center;
   gap: 1rem;
 }
 
