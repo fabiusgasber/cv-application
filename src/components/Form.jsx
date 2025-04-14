@@ -20,6 +20,17 @@ const Form = () => {
     const educationInputs = findInputs("education");
     const workInputs = findInputs("work");
 
+    const loadExample = () => {
+      setPersonalData(defaultData.defaultPersonalData);
+      setEducationData(defaultData.defaultEducationData);
+      setWorkData(defaultData.defaultWorkData);
+    }
+  
+    const deleteExample = () => {
+      setPersonalData([]);
+      setEducationData([]);
+      setWorkData([]);
+    }
     const setVisible = (e, index) => {
       if (
         visibleIndex === index &&
@@ -31,6 +42,11 @@ const Form = () => {
     }
 
   return (
+    <>
+    <div className="btn-container">
+    <button type="button" onClick={loadExample}>Load Example</button>
+    <button type="button" className="delete-btn" onClick={deleteExample}>Clear CV</button>
+    </div>
     <div className="main-layout">
       <div className="forms">
       <FormCollection visible={visibleIndex === 0} onClick={(e) => setVisible(e, 0)} inputs={personalInputs} formData={personalData} setFormData={setPersonalData} />
@@ -43,6 +59,7 @@ const Form = () => {
         <CVWrapper data={workData} title="Work Experience" />
       </div>
     </div>
+    </>
   );
 };
 

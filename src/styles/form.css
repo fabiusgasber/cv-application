@@ -7,6 +7,11 @@ form {
   gap: 1rem;
 }
 
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}
+
 .form-wrapper {
   display: flex;
   flex-direction: column;
@@ -53,9 +58,10 @@ form {
   flex-wrap: wrap;
 }
 
-#delete-btn {
+.delete-btn {
   background-color: red;
   color: #fff;
+  border: none;
 }
 
 .form-btn button[type="submit"] {

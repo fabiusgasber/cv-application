@@ -74,7 +74,7 @@ const FormCollection = ({visible, onClick, inputs, formData, setFormData}) => {
             <div className="form-btn">
                 <button type="button" onClick={() => setStatus("close")}>Cancel</button>
                 <button type="submit">Save</button>
-                <button type="button" id="delete-btn" onClick={deleteEntry}>Delete</button>
+                <button type="button" className="delete-btn" onClick={deleteEntry}>Delete</button>
             </div>
             </form>
 
