@@ -74,9 +74,14 @@ form {
 
 .experiences li {
   font-weight: bold;
-  padding: 0.25rem;
+  padding: 0.25rem 1rem;
+  border-radius: 12px;
+  transition: filter 0.2s ease-in;
+  background-color: var(--theme-color);
+  color: #fff;
 }
 
 .experiences li:hover {
   cursor: pointer;
+  filter: brightness(90%);
 }
