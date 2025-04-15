@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: "montserrat";
-  src: url(../../public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  src: url(/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
 :root {
@@ -46,6 +46,10 @@ details {
   border-radius: 12px;
   color: #000;
   padding: 1rem;
+}
+
+summary {
+  font-weight: bold;
 }
 
 summary:hover {

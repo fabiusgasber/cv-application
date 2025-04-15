@@ -48,7 +48,7 @@ nav {
   transform: rotate(180deg);
 }
 
-.form-wrapper>button {
+.form-wrapper > button {
   margin-top: auto;
   align-self: center;
 }
