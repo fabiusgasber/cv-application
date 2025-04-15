@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const FormCollection = ({visible, onClick, inputs, formData, setFormData}) => {
+const FormCollection = ({inputs, formData, setFormData}) => {
 
     const [activeForm, setActiveForm] = useState(null);
     const [status, setStatus] = useState("close") // close, add, edit
@@ -46,43 +46,48 @@ const FormCollection = ({visible, onClick, inputs, formData, setFormData}) => {
         const { name } = e.target;
         setActiveForm({...activeForm, [name]: e.target.value})
     }
+
+
+    const summaryId = inputs.title.split(" ").join("").toLowerCase();
+
     return (
-        <div className="form-wrapper" onClick={onClick}>
-        <h2 className={visible ? "rotate" : ""}>{inputs.title}</h2>
-        {status === "add" && visible &&
-        <form onSubmit={saveForm}>
-            {inputs.fields.map(input =>
-                <div><label key={input.key} htmlFor={input.name}>{input.label}</label><input type={input.type} id={input.name} name={input.name} placeholder={"Enter " + input.label}></input></div>
+        <details name="forms">
+        <summary id={summaryId}>{inputs.title}</summary>
+        <form className="form-wrapper" onSubmit={saveForm}>
+        {status === "add" &&
+        <>
+            {inputs.fields.map((input, index) =>
+                <div><label key={input.key} htmlFor={input.name}>{input.label}</label><input autoFocus={index===0} type={input.type} id={input.name} name={input.name} placeholder={"Enter " + input.label}></input></div>
             )}
             <div className="form-btn">
             <button type="button" onClick={() => setStatus("close")}>Cancel</button>
             <button type="submit">Save</button>
             </div>
-        </form>
+        </>
         }
-        {visible && status !== "edit" && status !== "add" &&
+        {status !== "edit" && status !== "add" &&
             <ul className="experiences">
-                {formData.map(form => <li key={form.id} onClick={showForm} data-id={form.id}>{form[inputs.displayField]}</li>)}
+                {formData.map(form => <li tabIndex={0}><button key={form.id} onClick={showForm} data-id={form.id} aria-description="edit entry">{form[inputs.displayField]}</button></li>)}
             </ul>
         }
         {
-            status === "edit" && visible &&
-            <form onSubmit={saveForm}>
-            {inputs.fields.map(input =>
-                <div><label key={input.key} htmlFor={input.name}>{input.label}</label><input value={activeForm[input.name]} name={input.name} id={input.name} onChange={handleChange} type={input.type} placeholder={"Enter " + input.label}></input></div>
+            status === "edit" &&
+            <>
+            {inputs.fields.map((input, index) =>
+                <div><label key={input.key} htmlFor={input.name}>{input.label}</label><input autoFocus={index===0} value={activeForm[input.name]} name={input.name} id={input.name} onChange={handleChange} type={input.type} placeholder={"Enter " + input.label}></input></div>
             )}
             <div className="form-btn">
                 <button type="button" onClick={() => setStatus("close")}>Cancel</button>
                 <button type="submit">Save</button>
                 <button type="button" className="delete-btn" onClick={deleteEntry}>Delete</button>
             </div>
-            </form>
-
+            </>
         }
-        { visible && status !== "edit" && status !== "add" &&
-            <button onClick={() => setStatus("add")}>Add</button>
+        { status !== "edit" && status !== "add" &&
+            <button id="add-btn" aria-labelledby={"add-btn " + summaryId} onClick={() => setStatus("add")}>Add</button>
         }
-        </div>
+        </form>
+        </details>
     )
 }
 

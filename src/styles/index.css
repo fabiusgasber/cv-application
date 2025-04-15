@@ -41,6 +41,17 @@ body {
   min-height: 100vh;
 }
 
+details {
+  background-color: #fff;
+  border-radius: 12px;
+  color: #000;
+  padding: 1rem;
+}
+
+summary:hover {
+  cursor: pointer;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
